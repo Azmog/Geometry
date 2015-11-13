@@ -28,6 +28,7 @@ public class Circle extends Figure {
 			throw new InvalidAttributesException("Radius must be greater then 0.0");
 		this.radius = radius;
 		this.area = calculateArea();
+		this.perimeter = calculatePerimeter();
 	}
 	
 	public double getRadius(){
