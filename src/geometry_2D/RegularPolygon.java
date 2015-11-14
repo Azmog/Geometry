@@ -46,7 +46,7 @@ public class RegularPolygon extends Figure {
 	}
 	
 	protected double calculateSquareOfRadiusOfCircumcircle(){
-		double alpha = 360/numberOfEdges;
+		double alpha = (2*Math.PI)/numberOfEdges;
 		//Regular Polygon N size can be divide on N isosceles triangles.
 		//From the law of cosines i can get square of radius of Circumcircle of a regular polygon
 		//needed in further calculations
@@ -67,7 +67,7 @@ public class RegularPolygon extends Figure {
 	
 	@Override
 	protected double calculateArea() {
-		double area, radius_square, alpha = 360/numberOfEdges;
+		double area, radius_square, alpha = (2*Math.PI)/numberOfEdges;
 		radius_square = getSquareOfRadiusOfCircumcircle();
 		
 		//Area of any regular polygon
