@@ -1,6 +1,6 @@
 package geometry_2D;
 
-import javax.naming.directory.InvalidAttributesException;
+import javax.management.InvalidAttributeValueException;
 
 import geometry_2D.Figure;
 
@@ -23,9 +23,9 @@ public class Circle extends Figure {
 	 * @param radius - must be greater then 0.0
 	 * @throws InvalidAttributesException
 	 */
-	public Circle (double radius) throws InvalidAttributesException{
+	public Circle (double radius) throws InvalidAttributeValueException{
 		if (radius <= 0.0)
-			throw new InvalidAttributesException("Radius must be greater then 0.0");
+			throw new InvalidAttributeValueException("Radius must be greater then 0.0");
 		this.radius = radius;
 		this.area = calculateArea();
 		this.perimeter = calculatePerimeter();

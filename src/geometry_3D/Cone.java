@@ -1,6 +1,6 @@
 package geometry_3D;
 
-import javax.naming.directory.InvalidAttributesException;
+import javax.management.InvalidAttributeValueException;
 
 import geometry_2D.Circle;
 
@@ -21,9 +21,9 @@ public class Cone extends Solid{
 		this.volume = calculateVolume();
 	}
 	
-	public Cone(Circle base, double height) throws InvalidAttributesException{
+	public Cone(Circle base, double height) throws InvalidAttributeValueException{
 		if(height <= 0.0)
-			throw new InvalidAttributesException("Height of cone must be greater then 0.0");
+			throw new InvalidAttributeValueException("Height of cone must be greater then 0.0");
 		if(base.equals(null))
 			throw new NullPointerException("Base of cone was not passed");
 		this.base = base;
@@ -35,6 +35,10 @@ public class Cone extends Solid{
 	
 	public double getHeight(){
 		return height;
+	}
+	
+	public Circle getBase(){
+		return base;
 	}
 	
 	@Override

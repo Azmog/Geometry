@@ -1,6 +1,6 @@
 package geometry_3D;
 
-import javax.naming.directory.InvalidAttributesException;
+import javax.management.InvalidAttributeValueException;
 import geometry_3D.Solid;
 import geometry_2D.RegularPolygon;
 /**
@@ -27,11 +27,11 @@ public class RightPyramid extends Solid {
 	 * @throws InvalidAttributesException
 	 * @throws NullPointerException
 	 */
-	public RightPyramid(RegularPolygon base, double height) throws InvalidAttributesException{
+	public RightPyramid(RegularPolygon base, double height) throws InvalidAttributeValueException{
 		if (base.equals(null))
 			throw new NullPointerException();
 		if (height <= 0.0)
-			throw new InvalidAttributesException("Height must be greater then 0.0.");
+			throw new InvalidAttributeValueException("Height must be greater then 0.0.");
 		
 		this.base = base;
 		this.height = height;
@@ -42,6 +42,10 @@ public class RightPyramid extends Solid {
 	
 	public double getHeight(){
 		return height;
+	}
+	
+	public RegularPolygon getBase(){
+		return base;
 	}
 	
 	@Override

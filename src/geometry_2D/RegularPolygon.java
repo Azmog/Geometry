@@ -1,6 +1,6 @@
 package geometry_2D;
 
-import javax.naming.directory.InvalidAttributesException;
+import javax.management.InvalidAttributeValueException;
 
 import geometry_2D.Figure;
 /**
@@ -31,15 +31,15 @@ public class RegularPolygon extends Figure {
      * @param edgeLength - must be greater then 0.0
      * @throws InvalidAttributesException
      */
-	public RegularPolygon(int numberOfEdges, double edgeLength) throws InvalidAttributesException{
+	public RegularPolygon(int numberOfEdges, double edgeLength) throws InvalidAttributeValueException{
 		if (numberOfEdges < 3)
-			throw new InvalidAttributesException("Number of edges must be at least 3");
+			throw new InvalidAttributeValueException("Number of edges must be at least 3");
 		this.numberOfEdges = numberOfEdges;
 		
 		if(edgeLength <= 0.0)
-			throw new InvalidAttributesException("Length of edge must be greater then 0.0");
+			throw new InvalidAttributeValueException("Length of edge must be greater then 0.0");
 		this.edgeLength = edgeLength;
-		
+		this.squareOfRadiusOfCircumcircle = calculateSquareOfRadiusOfCircumcircle();
 		this.area = calculateArea();
     	this.perimeter = calculatePerimeter();
     	this.squareOfRadiusOfCircumcircle = calculateSquareOfRadiusOfCircumcircle();
