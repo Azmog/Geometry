@@ -53,7 +53,7 @@ public class RegularPolygon extends Figure {
 		return (Math.pow(edgeLength, 2) / (2* (1 - Math.cos(alpha))));
 	}
 	
-	protected double getSquareOfRadiusOfCircumcircle(){
+	public double getSquareOfRadiusOfCircumcircle(){
 		return squareOfRadiusOfCircumcircle;
 	}
 	

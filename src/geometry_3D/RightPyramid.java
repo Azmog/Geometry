@@ -58,13 +58,13 @@ public class RightPyramid extends Solid {
 		double faceHeight, faceEdge;
 		
 		//From the Pythagorean theorem i can calculate face edge and face height needed in further calculations
-		faceEdge = Math.sqrt(Math.pow(base.getEdgeLength()/2, 2) + Math.pow(height, 2));
+		faceEdge = Math.sqrt(base.getSquareOfRadiusOfCircumcircle() + Math.pow(height, 2));
 		
 		//faceEdge^2 = faceHeight^2 + (1/2 base.edgeLenght)^2
 		//faceHeight = sqrt(faceEdge^2 - (1/2 base.edgeLenght)^2)
 		faceHeight = Math.sqrt(Math.pow(faceEdge,2) - Math.pow(base.getEdgeLength()/2,2));
 
-		return base.getNumberOfEdges() * ((base.getEdgeLength()/2 ) * faceHeight)/2;
+		return base.getNumberOfEdges() * (base.getEdgeLength() * faceHeight)/2;
 	}
 	@Override
 	protected double calculateTotalArea() {
